@@ -211,7 +211,7 @@
                     <p class="index-excerpt">
                       
                         CocoaAsyncSocket分为两个实现方式，一个是利用RunLoop，一个是利用GCD，两者都有对应的TCP和UDP的实现：
-
+TCP：AsyncSocket使用RunLoop，其主要成员变量包含：用CFSocketNativeHandle代表socket句柄，用CFSocketRef来代表socket结构体在runloop source中使用，当然，还需要对应的source：CFRunLoopSourceRef作为runloop的
                       
                     </p>
                     
