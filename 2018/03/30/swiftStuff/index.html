@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>整理一些SWIFT的关键词 | Gavin&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、@escaping &amp;amp; @noescaping 用来修饰作为函数参数的闭包，escaping代表闭包不在函数执行的作用域中执行，noescaping反之，因此，noescaping是安全的。 二、@discardableresult 用在方法申明的前面，表面方法返回的结果可以不被使用，这样可以禁止编译警告。 三、defer 位于defer后面的闭包里面的代码将在离开defer所在的作用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整理一些SWIFT的关键词">
+<meta property="og:url" content="http://gaughyean.com/2018/03/30/swiftStuff/index.html">
+<meta property="og:site_name" content="Gavin&#39;s Blog">
+<meta property="og:description" content="一、@escaping &amp;amp; @noescaping 用来修饰作为函数参数的闭包，escaping代表闭包不在函数执行的作用域中执行，noescaping反之，因此，noescaping是安全的。 二、@discardableresult 用在方法申明的前面，表面方法返回的结果可以不被使用，这样可以禁止编译警告。 三、defer 位于defer后面的闭包里面的代码将在离开defer所在的作用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-08T02:48:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="整理一些SWIFT的关键词">
+<meta name="twitter:description" content="一、@escaping &amp;amp; @noescaping 用来修饰作为函数参数的闭包，escaping代表闭包不在函数执行的作用域中执行，noescaping反之，因此，noescaping是安全的。 二、@discardableresult 用在方法申明的前面，表面方法返回的结果可以不被使用，这样可以禁止编译警告。 三、defer 位于defer后面的闭包里面的代码将在离开defer所在的作用">
+  
+    <link rel="alternate" href="/atom.xml" title="Gavin&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Gavin&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Half programmer&#39;s road</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://gaughyean.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-swiftStuff" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/30/swiftStuff/" class="article-date">
+  <time datetime="2018-03-30T02:42:13.000Z" itemprop="datePublished">2018-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      整理一些SWIFT的关键词
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote><p>一、@escaping &amp; @noescaping</p>
+<footer><strong>用来修饰作为函数参数的闭包，escaping代表闭包不在函数执行的作用域中执行，noescaping反之，因此，noescaping是安全的。</strong></footer></blockquote>
+<blockquote><p>二、@discardableresult</p>
+<footer><strong>用在方法申明的前面，表面方法返回的结果可以不被使用，这样可以禁止编译警告。</strong></footer></blockquote>
+<blockquote><p></p><p>三、defer<br></p>
+<footer><strong>位于defer后面的闭包里面的代码将在离开defer所在的作用域的时候执行。 英文解释： The new defer keyword provides a safe and easy way to handle this challenge by declaring a block that will be executed only when execution leaves the current scope.</strong></footer></blockquote><p></p>
+<blockquote><p></p><p>四、guard…else<br></p>
+<footer><strong>尝试执行guard后面的代码，该代码的返回值是布尔类型，如果返回值是false，则执行else后面的代码，而这个else的代码必须离开guard代码所在的作用域。 英文解释： guard is a new conditional statement that requires execution to exit the current block if the condition isn’t met. Any new optional bindings created in a guard statement’s condition are available for the rest of the function or block</strong><cite>and the mandatory else must exit the current scope</cite></footer></blockquote><p></p>
+<blockquote><p>五、mutating</p>
+<footer><strong>可以使得struct 和 enum里面的成员变成可变</strong></footer></blockquote>
+<blockquote><p>六、associatedtype</p>
+<footer><strong>用于protocol里面，与遵循protocol的type对应。</strong></footer></blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://gaughyean.com/2018/03/30/swiftStuff/" data-id="cjfq7ih9o0000ctix7j6m31jq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/30/swiftStuff/">整理一些SWIFT的关键词</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Gavin Tsang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
